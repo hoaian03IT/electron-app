@@ -1,14 +1,5 @@
 @import "normalize.css";
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
 // embed font
 /* devanagari */
 @font-face {
@@ -193,4 +184,44 @@ html {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
+}
+
+:root {
+  --primary-orange-color: #f47629;
+  --primary-gray-color: #303442;
+  --white-color: #fff;
+
+  --default-font: "Roboto";
+  --default-font2: "Poppins";
+
+  // --default-layout-header-height: 60px;
+  --default-layout-header-width: 1200px;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Roboto;
+  font-size: 1.6rem;
+  text-rendering: optimizeSpeed;
+  line-height: 27px;
+  color: var(--primary-gray-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-gray-color);
+  outline: none;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
 }

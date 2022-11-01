@@ -1,15 +1,14 @@
 import classNames from "classnames/bind";
-import Header from "~/components/Header";
-import styles from "./Home.module.scss";
+import styles from "./FAQ.module.scss";
 
 const cx = classNames.bind(styles);
 
-function Home() {
+function FAQ() {
   return (
     <div className={cx("wrapper")}>
-      <Header />
+      <h1>FAQ Page</h1>
     </div>
   );
 }
 
-export default Home;
+export default FAQ;
