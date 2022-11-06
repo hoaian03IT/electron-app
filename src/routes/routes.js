@@ -11,7 +11,7 @@ import RoutesConfig from "~/config/routes";
 
 const publicRoutes = [
   { path: RoutesConfig.home, component: Home, tag: "Home" },
-  { path: RoutesConfig.info, component: AboutUs, tag: "About Us" },
+  { path: RoutesConfig.aboutUs, component: AboutUs, tag: "About Us" },
   { path: RoutesConfig.services, component: Services, tag: "Services" },
   { path: RoutesConfig.prices, component: Prices, tag: "Prices" },
   { path: RoutesConfig.gallery, component: Gallery, tag: "Gallery" },

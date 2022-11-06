@@ -9,9 +9,13 @@ import { faBolt } from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(styles);
 
-function NavigationBar() {
+function NavigationBar({ scroll }) {
   return (
-    <div className={cx("wrapper")}>
+    <div
+      className={cx("wrapper", {
+        scroll,
+      })}
+    >
       <div className={cx("inner")}>
         <nav className={cx("nav")}>
           <div className={cx("logo")}>
@@ -21,7 +25,12 @@ function NavigationBar() {
           <div className={cx("nav-list")}>
             {publicRoutes.map((route, index) => {
               return (
-                <NavLink to={route.path} key={index} className={cx("nav-item")}>
+                <NavLink
+                  end
+                  to={route.path}
+                  key={index}
+                  className={(nav) => cx("nav-item", { active: nav.isActive })}
+                >
                   {route.tag}
                 </NavLink>
               );

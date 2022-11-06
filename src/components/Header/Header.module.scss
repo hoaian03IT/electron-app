@@ -1,7 +1,11 @@
 .wrapper {
-  --default-height-top-holder: 52px;
-  --default-height-navigation-bar: 114px;
-
   width: 100%;
   font-family: var(--default-font);
+  position: fixed;
+  z-index: 999;
+  transition: transform 0.2s linear;
+
+  &.scroll {
+    transform: translateY(calc(var(--default-height-top-holder) * -1));
+  }
 }

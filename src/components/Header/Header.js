@@ -1,21 +1,74 @@
+import { useState, useEffect, createContext } from "react";
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import NavigationBar from "./NavigationBar";
 import TopHolder from "./TopHolder";
 const cx = classNames.bind(styles);
 
-function Header() {
-  return (
-    <header className={cx("wrapper")}>
-      <TopHolder
-        address="8494 Signal Hill Road Manassas, VA, 20110"
-        timeWork="Mon-Fri 08:00 AM - 05:00 PM"
-        phone="1 (800) 765-43-21"
-        numberBoughtProduct="4"
-      />
+const MENU_ITEMS = [
+  {
+    to: "/home",
+    src: "http://websmirno.site/viktor/electron/images/product-01.jpg",
+    alt: "",
+    title: "Woods WiOn 15 amps Receptacle and USB Charger",
+    currentPrice: 41.99,
+    oldPrice: 0,
+  },
+  {
+    to: "/home",
+    src: "http://websmirno.site/viktor/electron/images/product-02.jpg",
+    alt: "",
+    title: "Powerboss 3500 watts Gasoline Portable Generator",
+    currentPrice: 329.99,
+    oldPrice: 342.32,
+  },
+  {
+    to: "/home",
+    src: "http://websmirno.site/viktor/electron/images/product/product-03.jpg",
+    alt: "",
+    title:
+      "Blackt Electrotech: 230 Volt Digital Programmable Timer Electronic Timer (24x7): Energy Saving Socket",
+    currentPrice: 41.99,
+    oldPrice: 0,
+  },
+];
 
-      <NavigationBar />
-    </header>
+export const DataProductInCart = createContext();
+
+function Header() {
+  const [scrollValue, setScrollValue] = useState(0);
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    document.onscroll = () => {
+      if (window.pageYOffset > scrollValue) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+
+      setScrollValue(window.pageYOffset);
+    };
+  }, [scroll, scrollValue]);
+
+  return (
+    <DataProductInCart.Provider value={MENU_ITEMS}>
+      <header
+        className={cx("wrapper", {
+          scroll,
+        })}
+      >
+        <TopHolder
+          scroll={scroll}
+          address="8494 Signal Hill Road Manassas, VA, 20110"
+          timeWork="Mon-Fri 08:00 AM - 05:00 PM"
+          phone="1 (800) 765-43-21"
+          numberBoughtProduct="4"
+        />
+
+        <NavigationBar scroll={scroll} />
+      </header>
+    </DataProductInCart.Provider>
   );
 }
 
