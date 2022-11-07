@@ -4,7 +4,6 @@ import { Carousel } from "react-responsive-carousel";
 import classNames from "classnames/bind";
 
 import styles from "./Slider.scss";
-import { faFileShield } from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(styles);
 
@@ -17,6 +16,7 @@ function Slider({
   showArrows = false,
   showStatus = false,
   showIndicators = false,
+  useKeyboardArrows = false,
   FormContent,
 }) {
   return (
@@ -31,6 +31,7 @@ function Slider({
         showArrows={showArrows}
         showStatus={showStatus}
         showIndicators={showIndicators}
+        useKeyboardArrows={useKeyboardArrows}
         // swipeable is false to support autoPlay when animationHandler="fade"
         swipeable={false}
         animationHandler="fade"

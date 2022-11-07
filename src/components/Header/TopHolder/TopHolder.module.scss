@@ -2,6 +2,11 @@
   width: 100%;
   background-color: var(--primary-gray-color);
   height: var(--default-height-top-holder);
+  margin-bottom: 0px;
+
+  &.scroll {
+    margin-bottom: var(--default-height-navigation-bar);
+  }
 }
 
 .inner {

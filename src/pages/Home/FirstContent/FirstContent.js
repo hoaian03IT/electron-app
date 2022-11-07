@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 function FirstContent({ data }) {
   return (
-    <div className={cx("content")}>
+    <div className={cx("wrapper")}>
       {data.map((item, index) => (
         <Item key={index} data={item} />
       ))}

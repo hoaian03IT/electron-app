@@ -38,6 +38,10 @@
   &:focus {
     border-color: var(--primary-orange-color);
   }
+
+  &--date::before {
+    content: "Date: ";
+  }
 }
 
 .invalid-input {

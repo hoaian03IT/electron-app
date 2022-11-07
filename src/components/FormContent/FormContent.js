@@ -97,7 +97,7 @@ function FormContent() {
         />
         <input
           value={valueDateInput}
-          className={cx("input")}
+          className={cx("input", "input--date")}
           type="date"
           placeholder="Your date"
           onChange={(e) => setValueDateInput(e.target.value)}

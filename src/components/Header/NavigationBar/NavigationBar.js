@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import classNames from "classnames/bind";
 import images from "~/assets/images";
 import styles from "./NavigationBar.module.scss";

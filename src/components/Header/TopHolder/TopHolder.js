@@ -8,7 +8,6 @@ import {
   faPhone,
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import styles from "./TopHolder.module.scss";
 import CartWrapper from "~/components/Popper";

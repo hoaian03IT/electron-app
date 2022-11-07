@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from "./Button.module.scss";
@@ -5,6 +6,7 @@ const cx = classNames.bind(styles);
 
 function Button({
   className,
+  style,
   to,
   href,
   children,
@@ -27,6 +29,7 @@ function Button({
   let Comp = "button";
 
   const props = {
+    style,
     onClick,
   };
 
@@ -46,4 +49,4 @@ function Button({
   );
 }
 
-export default Button;
+export default memo(Button);

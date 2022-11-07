@@ -6,6 +6,7 @@ const images = {
   picSlideInfo1: require("~/assets/images/slideinfo-01.jpg"),
   picSlideInfo2: require("~/assets/images/slideinfo-02.jpg"),
   picSlideInfo3: require("~/assets/images/slideinfo-03.jpg"),
+  backgroundSecondContent: require("~/assets/images/background-content2.jpg"),
 };
 
 export default images;

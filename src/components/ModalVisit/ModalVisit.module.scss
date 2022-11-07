@@ -1,0 +1,102 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  @keyframes moveTo {
+    from {
+      opacity: 0.1;
+      transform: translate(-50%, -40%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-50%, -50%);
+    }
+  }
+
+  .modal {
+    padding: 53px 56px 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white-color);
+    animation: moveTo 0.2s ease-in-out;
+
+    .title {
+      font-family: var(--default-font2);
+      margin-bottom: 32px;
+      font-size: 3.6rem;
+    }
+  }
+}
+
+.input-group {
+  display: flex;
+  line-height: 25px;
+  font-family: var(--default-font);
+}
+
+.input,
+.text-area {
+  flex: 1;
+  margin-bottom: 12px;
+  padding: 14px 12px 12px 18px;
+  min-height: 52px;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  box-shadow: 0 2px 4px rgb(171 171 171 / 13%);
+  border: 2px solid #f4f4f4;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.2s ease-out;
+
+  & + .input {
+    margin-left: 30px;
+  }
+
+  &::placeholder {
+    color: black;
+  }
+
+  &:focus {
+    border-color: var(--primary-orange-color);
+  }
+
+  &--date:before {
+    content: "Date of visit: ";
+  }
+}
+
+.text-area {
+  font-family: var(--default-font);
+  height: 91px;
+
+  &::placeholder {
+    font-family: var(--default-font);
+  }
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 24px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.btn-submit {
+  margin-top: 12px;
+}

@@ -1,11 +1,9 @@
 .wrapper {
   width: 100%;
   font-family: var(--default-font);
-  position: fixed;
   z-index: 999;
-  transition: transform 0.2s linear;
 
   &.scroll {
-    transform: translateY(calc(var(--default-height-top-holder) * -1));
+    box-shadow: 0 0 15px rgb(48 52 66 / 10%);
   }
 }

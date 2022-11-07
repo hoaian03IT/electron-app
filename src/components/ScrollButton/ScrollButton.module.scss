@@ -1,0 +1,12 @@
+.wrapper {
+  position: fixed;
+  bottom: 32px;
+  right: 16px;
+  transform: translateY(200%);
+  transition: transform 0.2s ease-in-out;
+  z-index: 5;
+
+  &.show {
+    transform: translateY(0%);
+  }
+}

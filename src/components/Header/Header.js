@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, createContext } from "react";
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
 import NavigationBar from "./NavigationBar";
@@ -36,20 +36,19 @@ const MENU_ITEMS = [
 export const DataProductInCart = createContext();
 
 function Header() {
-  const [scrollValue, setScrollValue] = useState(0);
   const [scroll, setScroll] = useState(false);
 
-  useEffect(() => {
-    document.onscroll = () => {
-      if (window.pageYOffset > scrollValue) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
+  const handleToggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    const startPointToHidden = 52; // is height of the TopHolder component
+    if (scrolled > startPointToHidden) {
+      setScroll(true);
+    } else if (scrolled < startPointToHidden) {
+      setScroll(false);
+    }
+  };
 
-      setScrollValue(window.pageYOffset);
-    };
-  }, [scroll, scrollValue]);
+  window.addEventListener("scroll", handleToggleVisible);
 
   return (
     <DataProductInCart.Provider value={MENU_ITEMS}>

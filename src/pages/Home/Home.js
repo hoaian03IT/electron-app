@@ -1,3 +1,4 @@
+import { useState } from "react";
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +10,9 @@ import images from "~/assets/images";
 
 import styles from "./Home.module.scss";
 import FormContent from "~/components/FormContent";
+import SecondContent from "./SecondContent";
+import ScrollButton from "~/components/ScrollButton";
+import ModalVisit from "~/components/ModalVisit";
 
 const DATA_FIRST_CONTENT = [
   {
@@ -58,20 +62,32 @@ const DATA_SLIDERS = [
 const cx = classNames.bind(styles);
 
 function Home() {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleToggleShowModal = () => {
+    setShowModal(!showModal);
+  };
+
   return (
-    <div className={cx("wrapper")}>
-      <Header />
-      <WrapperContainer>
-        <Slider
-          data={DATA_SLIDERS}
-          autoPlay
-          transitionTime="500"
-          infiniteLoop
-          FormContent={<FormContent />}
-        />
-        <FirstContent data={DATA_FIRST_CONTENT} />
-      </WrapperContainer>
-    </div>
+    <>
+      <div className={cx("wrapper")}>
+        {showModal && <ModalVisit onClick={handleToggleShowModal} />}
+        <Header />
+        <WrapperContainer>
+          <Slider
+            data={DATA_SLIDERS}
+            autoPlay
+            transitionTime="500"
+            infiniteLoop
+            FormContent={<FormContent />}
+          />
+          <FirstContent data={DATA_FIRST_CONTENT} />
+          <SecondContent onClick={handleToggleShowModal} />
+        </WrapperContainer>
+
+        <ScrollButton />
+      </div>
+    </>
   );
 }
 
