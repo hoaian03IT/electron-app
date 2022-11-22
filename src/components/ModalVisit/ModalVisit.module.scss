@@ -54,6 +54,7 @@
   flex: 1;
   margin-bottom: 12px;
   padding: 14px 12px 12px 18px;
+  width: 100%;
   min-height: 52px;
   color: var(--text-color);
   font-size: 1.6rem;
@@ -62,10 +63,6 @@
   border-radius: 4px;
   outline: none;
   transition: all 0.2s ease-out;
-
-  & + .input {
-    margin-left: 30px;
-  }
 
   &::placeholder {
     color: black;
@@ -99,4 +96,12 @@
 
 .btn-submit {
   margin-top: 12px;
+}
+
+.invalid-input {
+  padding: 2px 6px;
+
+  background-color: red;
+  color: var(--white-color);
+  border-radius: 4px;
 }

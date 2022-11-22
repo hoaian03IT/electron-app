@@ -1,16 +1,16 @@
-import { useCallback } from "react";
 import classNames from "classnames/bind";
 import images from "~/assets/images";
 import styles from "./NavigationBar.module.scss";
 import { publicRoutes } from "~/routes";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "~/components/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
+import routes from "~/config/routes";
 
 const cx = classNames.bind(styles);
 
-function NavigationBar({ scroll }) {
+function NavigationBar({ scroll, onClick }) {
   return (
     <div
       className={cx("wrapper", {
@@ -20,8 +20,10 @@ function NavigationBar({ scroll }) {
       <div className={cx("inner")}>
         <nav className={cx("nav")}>
           <div className={cx("logo")}>
-            <img className={cx("logo-image")} src={images.logo} alt="" />
-            <h1 className={cx("logo-text")}>Electron</h1>
+            <Link to={routes.home}>
+              <img className={cx("logo-image")} src={images.logo} alt="" />
+              <h1 className={cx("logo-text")}>Electron</h1>
+            </Link>
           </div>
           <div className={cx("nav-list")}>
             {publicRoutes.map((route, index) => {
@@ -38,7 +40,11 @@ function NavigationBar({ scroll }) {
             })}
           </div>
 
-          <Button primary iconLeft={<FontAwesomeIcon icon={faBolt} />}>
+          <Button
+            primary
+            iconLeft={<FontAwesomeIcon icon={faBolt} />}
+            onClick={onClick}
+          >
             Appointment
           </Button>
         </nav>

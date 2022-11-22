@@ -1,0 +1,156 @@
+.wrapper {
+  position: relative;
+  margin-top: 162px;
+  background-color: var(--primary-gray-color);
+  color: var(--white-color);
+}
+
+.subscribe-form {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner {
+  width: var(--default-layout-header-width);
+  padding: 108px 15px 0 15px;
+  margin: 0 auto;
+  color: #bbbdc3;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-detail {
+  flex: 0 0 58.3333333333%;
+  max-width: 58.3333333333%;
+}
+
+.additional {
+  display: flex;
+
+  .logo {
+    position: relative;
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+    font-family: var(--default-font2);
+
+    .logo-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .logo-text {
+      position: absolute;
+      top: 10px;
+      left: 22px;
+      font-size: 4rem;
+      color: var(--white-color);
+      z-index: 1;
+    }
+  }
+
+  .description {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+    font-weight: 400;
+  }
+}
+
+.info-related {
+  margin-top: 50px;
+  display: flex;
+}
+
+.list {
+  flex: 0 0 41.6666666667%;
+  max-width: 41.6666666667%;
+  display: flex;
+  flex-wrap: wrap;
+
+  .item {
+    margin-top: 6px;
+    width: 50%;
+    float: left;
+    font-family: var(--default-font2);
+    font-weight: 600;
+
+    .primary-icon {
+      font-size: 1.6rem;
+      margin-right: 12px;
+    }
+  }
+}
+
+.link {
+  color: var(--white-color);
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--primary-orange-color);
+  }
+}
+
+.primary-icon {
+  color: var(--primary-orange-color);
+}
+
+.contact-info {
+  flex: 0 0 58.3333333333%;
+  max-width: 58.3333333333%;
+}
+
+.info-item {
+  margin-top: 6px;
+
+  .primary-icon {
+    margin-right: 12px;
+  }
+
+  .to-number {
+    color: #bbbdc3;
+
+    &:hover {
+      color: var(--primary-orange-color);
+    }
+  }
+}
+
+.map {
+  width: 429px;
+  height: 246px;
+
+  .google-map {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.copyright {
+  margin-top: 46px;
+  padding-bottom: 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-network {
+  display: flex;
+  a {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-color);
+    height: 29px;
+    width: 29px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+      background-color: var(--primary-orange-color);
+    }
+  }
+}

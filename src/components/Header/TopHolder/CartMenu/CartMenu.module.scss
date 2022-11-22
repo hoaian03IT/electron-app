@@ -43,11 +43,14 @@
 .item {
   position: relative;
   padding: 0 35px;
-  display: flex;
-  align-items: center;
 
   & + .item {
     margin-top: 19px;
+  }
+
+  .link-item {
+    display: flex;
+    align-items: center;
   }
 
   .img {
@@ -91,6 +94,7 @@
   }
   .delete-btn {
     position: absolute;
+    padding: 4px;
     top: 6px;
     right: 12px;
     font-size: 1.4rem;

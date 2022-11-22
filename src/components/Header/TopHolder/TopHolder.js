@@ -14,7 +14,7 @@ import CartWrapper from "~/components/Popper";
 import { CartMenu } from "./CartMenu";
 const cx = classNames.bind(styles);
 
-function TopHolder({ address, timeWork, phone, numberBoughtProduct, scroll }) {
+function TopHolder({ address, timeWork, phone, scroll, numberBoughtProduct }) {
   return (
     <div
       className={cx("wrapper", {
@@ -84,7 +84,7 @@ TopHolder.propTypes = {
   address: PropTypes.string.isRequired,
   timeWork: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
-  numberBoughtProduct: PropTypes.string.isRequired,
+  numberBoughtProduct: PropTypes.number.isRequired,
 };
 
 export default TopHolder;

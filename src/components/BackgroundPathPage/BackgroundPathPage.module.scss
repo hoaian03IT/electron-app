@@ -1,0 +1,37 @@
+.wrapper {
+  position: relative;
+  height: 165px;
+}
+
+.inner {
+  margin: 0 auto;
+  padding: 0 15px;
+  width: var(--default-layout-header-width);
+  height: 100%;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.path {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 400;
+
+  .first-page,
+  .current-page,
+  .divide {
+    color: #bbbdc3;
+    margin-right: 14px;
+    transition: all 0.3s ease-out;
+  }
+
+  .first-page:hover {
+    color: var(--primary-orange-color);
+  }
+}

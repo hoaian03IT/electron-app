@@ -4,11 +4,13 @@ import MenuItem from "./MenuItem";
 
 const cx = classNames.bind(styles);
 
-function MenuList({ data }) {
+function MenuList({ data, onClick }) {
   return (
     <div className={cx("list")}>
       {data.length > 0 ? (
-        data.map((data, index) => <MenuItem key={index} data={data} />)
+        data.map((data) => (
+          <MenuItem key={data.id} data={data} onClick={onClick} />
+        ))
       ) : (
         <img
           className={cx("no-product")}

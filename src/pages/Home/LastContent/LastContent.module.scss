@@ -1,0 +1,18 @@
+.wrapper {
+  margin-top: 120px;
+  padding-top: 48px;
+  border-top: 1px solid #e9e9eb;
+}
+
+.inner {
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  width: var(--default-layout-header-width);
+  flex-wrap: wrap;
+}
+
+.link {
+  flex-basis: calc(100% / 6);
+}
